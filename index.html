@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Night Shift: 2 A.M. — Prototype 0.2</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main id="app">
+    <section id="menu" class="panel">
+      <div class="eyebrow">PROTOTYPE 0.2</div>
+      <h1>Night Shift: <span>2 A.M.</span></h1>
+      <p class="tagline">Two parents. Two sleeping kids. One very unhappy ghost.</p>
+
+      <div class="card">
+        <h2>Two-player connection test</h2>
+        <p>Create a room and send the code to the second player, or join a room someone already created.</p>
+        <button id="createBtn">Create Game</button>
+
+        <div class="divider"><span>OR</span></div>
+
+        <label for="roomInput">Room code</label>
+        <input id="roomInput" maxlength="4" autocomplete="off" placeholder="ABCD">
+        <button id="joinBtn" class="secondary">Join Game</button>
+
+        <p id="message" class="message"></p>
+      </div>
+    </section>
+
+    <section id="game" hidden>
+      <header class="hud">
+        <div>
+          <div class="eyebrow">NIGHT SHIFT: 2 A.M.</div>
+          <strong id="role"></strong>
+        </div>
+        <div class="room">ROOM <b id="roomCode"></b></div>
+        <div class="connection" id="connection">Connecting…</div>
+      </header>
+
+      <div class="game-wrap">
+        <div id="world" aria-label="multiplayer test room">
+          <div class="room-label">THE HOUSE — PROTOTYPE ROOM</div>
+          <div class="door d1"></div>
+          <div class="door d2"></div>
+          <div class="rug"></div>
+          <div class="crib"></div>
+          <div class="toy"></div>
+          <div class="player p1" id="player1"><span></span><b>Parent A</b></div>
+          <div class="player p2" id="player2"><span></span><b>Parent B</b></div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <div>
+          <strong>Move</strong>
+          <span>W A S D / Arrow keys</span>
+        </div>
+        <div class="touch-controls">
+          <button data-key="ArrowUp">▲</button>
+          <div>
+            <button data-key="ArrowLeft">◀</button>
+            <button data-key="ArrowDown">▼</button>
+            <button data-key="ArrowRight">▶</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/game.js"></script>
+</body>
+</html>
