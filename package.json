@@ -1,0 +1,17 @@
+{
+  "name": "night-shift-2am-prototype",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Night Shift: 2 A.M. - two-player browser multiplayer prototype",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "socket.io": "^4.8.1"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
